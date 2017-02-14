@@ -18,8 +18,23 @@ namespace dz6
 
         public void print()
         {
-            foreach(karta i in koloda)
-                Console.WriteLine(i);
+            if (koloda.Count==0)
+            {
+                Console.WriteLine("Карт на руках нет");
+            }
+            //for (int i = 0; i < koloda.Count; i++)
+            //{
+            //    Console.WriteLine($"{kolo}-{koloda.GetEnumerator()}");
+            //}
+            foreach (karta i in koloda)
+            {
+                ICollection<int> keys = i.type.Keys;
+                foreach (int j in keys)
+                {
+                    //Console.WriteLine("ID -> {0}  Name -> {1}", j, dic[j]);
+                    Console.WriteLine($"{i.type[j].PadLeft(20)}\t-{i.mast}");
+                }
+            }
         }
     }
 }

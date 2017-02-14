@@ -9,7 +9,7 @@ namespace dz6
     class karta
     {
         public string mast { get; set; }
-        public string type { get; set; }
+       public Dictionary<int, string> type { get; set; }  = new Dictionary<int, string>();
         //public karta ()
         //{
         //    return new karta();
